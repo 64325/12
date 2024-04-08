@@ -15,16 +15,7 @@ string encrypt_caesar(string text, string alf, int numberOfPositions)
             continue;
         }
         char bukva = text[i];
-        char cipherbukva;
-        char originalCase;
-        if (islower(bukva)) 
-        {
-            originalCase = 'a';
-        } 
-        else 
-        {
-            originalCase = 'A';
-        }
+        char cipherbukva; 
         int index = alf.find(tolower(bukva));
         int newIndex = (index + numberOfPositions % alphSize + alphSize) % alphSize;
         cipherbukva = alf[newIndex];
@@ -44,6 +35,7 @@ string decrypt_caesar(string cipher, int numberOfPositions, string alf)
 }
 
 int main() {
+
     string text = "Hello, World!";
     string alph = "abcdefghijklmnopqrstuvwxyz";
     int numberOfPositions;
